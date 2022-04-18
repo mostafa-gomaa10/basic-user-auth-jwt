@@ -1,0 +1,60 @@
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "email":"myvalid@valid.com",
+    "password":"fewjkjwe@fefcocsm"
+}
+
+###
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name":"my name",
+    "password":"fewjkjwe@fefcocsm"
+}
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+     "name":"my name",
+    "email":"myvalid@valid.com",
+}
+
+###
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name":"my name",
+    "email":"myvalid@INvalid",
+    "password":"fewjkjwe@fefcocsm"
+}
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name":"my name",
+    "email":"myvalid@valid.com",
+    "password":"123"
+}
+
+###
+
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name":"my name",
+    "email":"myvalid@valid.com",
+    "password":"fewjkjwe@fefcocsm"
+}
+
+###
