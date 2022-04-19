@@ -1,6 +1,7 @@
 const User = require('../models/User');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const createError = require('http-errors')
 const { registerValidation, loginValidation } = require('../validation');
 
 
@@ -23,18 +24,17 @@ const regsiterPost = async (req, res) => {
     if (validation.error) {
         return res.status(400).json({ error: validation.error.details[0].message })
     }
-
-    const emailExist = await User.findOne({ email: req.body.email });
+    const emailExist = await User.findOne({ email: validation.value.email });
     if (emailExist) {
         return res.status(400).json({ error: 'Email Already Registered' })
     }
 
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(req.body.password, salt);
+    const hashedPassword = await bcrypt.hash(validation.value.password, salt);
 
     const user = new User({
         name: req.body.name,
-        email: req.body.email,
+        email: validation.value.email,
         password: hashedPassword,
     })
 

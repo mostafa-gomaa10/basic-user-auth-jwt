@@ -4,7 +4,7 @@ const registerValidation = (data) => {
 
     const registerValidationSchema = JOI.object({
         name: JOI.string().min(6).required(),
-        email: JOI.string().min(6).required().email(),
+        email: JOI.string().min(6).required().email().lowercase(),
         password: JOI.string().min(6).required(),
     })
 
@@ -15,7 +15,7 @@ const registerValidation = (data) => {
 const loginValidation = (data) => {
 
     const loginValidationSchema = JOI.object({
-        email: JOI.string().min(6).required().email(),
+        email: JOI.string().min(6).required().email().lowercase(),
         password: JOI.string().min(6).required(),
     })
 
