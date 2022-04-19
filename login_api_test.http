@@ -11,6 +11,15 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
+    "email":"myvalid@valid.com",
+    "password":"@fefcocsm"
+}
+
+###
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
     "email":"mywrong@valid.com",
     "password":"fewjkjwe@fefcocsm"
 }
