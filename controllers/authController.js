@@ -86,8 +86,17 @@ const loginPost = async (req, res) => {
     })
 }
 
+const logoutPost = async (req, res, next) => {
+    res.json({ dd: 'dddd' })
+}
+
+const refToken = async (req, res, next) => {
+    res.json({ dd: 'dddd' })
+}
 
 module.exports = {
     regsiterPost,
-    loginPost
+    loginPost,
+    logoutPost,
+    refToken
 }
